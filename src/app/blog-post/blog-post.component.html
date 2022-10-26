@@ -1,0 +1,9 @@
+<main *ngIf = "blogPosts | async as blogPosts">
+  <div class="post-container">
+    <img [src] = "blogPosts.fields.featuredImage.fields.file.url">
+    <h2>{{blogPosts.fields.title}}</h2>
+    <p class ="author">{{blogPosts.fields.author}}</p>
+    <p class="content" [innerHtml]="_returnHtmlFromRichText(blogPosts.fields.content)"></p>
+    <a routerLink="../../">Go back</a>
+  </div>
+</main>
